@@ -1,5 +1,9 @@
 package com.k8s.controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +13,9 @@ public class DemoController {
     
     @RequestMapping("/hello")
     public String sayHello(@RequestParam String name) {
-        return "Hello "+name+"! I'm springboot-web-demo controller!";
+        DateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        
+        return "Hello "+name+"! I'm springboot-web-demo controller! time:"+df.format(new Date());
     }
     
 }
