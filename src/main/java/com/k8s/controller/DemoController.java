@@ -14,8 +14,13 @@ public class DemoController {
     @RequestMapping("/hello")
     public String sayHello(@RequestParam String name) {
         DateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        
         return "Hello "+name+"! I'm springboot-web-demo controller! time:"+df.format(new Date());
+    }
+    
+    @RequestMapping("/hello2")
+    public String sayHello() {
+        DateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return "Hello Bro! I'm springboot-web-demo controller! time:"+df.format(new Date());
     }
     
 }
