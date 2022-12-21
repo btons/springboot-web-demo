@@ -23,4 +23,10 @@ public class DemoController {
         return "Hello Bro! I'm springboot-web-demo controller! time:"+df.format(new Date());
     }
     
+    @RequestMapping("/adams")
+    public String sayAdams() {
+        DateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return "adams is here! time:"+df.format(new Date());
+    }
+    
 }
