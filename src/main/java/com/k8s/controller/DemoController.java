@@ -29,4 +29,10 @@ public class DemoController {
         return "adams at here! time:"+df.format(new Date());
     }
     
+    @RequestMapping("/john")
+    public String sayJohn() {
+        DateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return "john到此一遊! time:"+df.format(new Date());
+    }
+    
 }
