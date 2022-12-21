@@ -26,7 +26,7 @@ public class DemoController {
     @RequestMapping("/adams")
     public String sayAdams() {
         DateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        return "adams is here! time:"+df.format(new Date());
+        return "adams在此一遊! time:"+df.format(new Date());
     }
     
 }
