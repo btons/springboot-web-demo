@@ -1,25 +1,31 @@
-package com.k8s;
+package com.k8s.core;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
 
-import org.junit.jupiter.api.Assertions;
+class ReaderTest {
+    private Reader reader;
 
-import com.k8s.core.Article;
-import com.k8s.core.Reader;
-import com.k8s.core.Writer;
+    private Writer writer;
 
-//@SpringBootApplication
-public class K8SDemoApplication {
-
-	public static void main(String[] args) {
-	    Reader reader=null;
-	    Writer writer=null;
-	    
+    @org.junit.jupiter.api.BeforeEach
+    void setUp() {
         try {
             reader = new Reader();
-            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    void list() {
+        try {
             List<Article> result = reader.getList("Gossiping");
             Assertions.assertInstanceOf(List.class, result);
             for(Article article:result) {
@@ -33,9 +39,5 @@ public class K8SDemoApplication {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-	   
-        System.exit(0);
-		//SpringApplication.run(K8SDemoApplication.class, args);
-	}
-
+    }
 }
